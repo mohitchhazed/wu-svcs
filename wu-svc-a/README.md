@@ -20,7 +20,7 @@ While the server is running hit the URL [http://127.0.0.1:8080/api](http://127.0
 
 ```sh 
 # To deploy a new app in your current namespace
-oc new-app https://github.com/vchintal/wu-svcs --context-dir=wu-svc-a
+oc new-app --name=wu-svc-a https://github.com/vchintal/wu-svcs --context-dir=wu-svc-a
 
 # To expose the route 
 oc expose service wu-svc-a --path=/api
