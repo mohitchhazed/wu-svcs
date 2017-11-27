@@ -2,7 +2,7 @@
     "name": "wu-svc-a",
     "main": "server.js",
     "dependencies": {
-        "express": "~4.0.0", 
+        "express": "~4.0.0",
         "sleep": "~5.1.1"
     }
 }
