@@ -1,4 +1,3 @@
-var sleep = require('sleep');
 var express = require('express');
 var app = express();
 var router = express.Router();
@@ -11,14 +10,15 @@ function randomIntFromInterval(min,max) {
 router.get('/', function(req, res) {
     var sleepTime = randomIntFromInterval(10,50);
     console.log('Sleeping for '+sleepTime+' ms');
-    sleep.msleep(sleepTime);
-    randomErrorNumber = randomIntFromInterval(0,2000);
-    if (randomErrorNumber == 0) {
-      console.log('Randomly erroring!');
-      res.status(401).send("UNAUTHORIZED");
-    } else {
-      res.send('AUTHORIZED');
-    }
+    setTimeout(function() {
+      randomErrorNumber = randomIntFromInterval(0,2000);
+      if (randomErrorNumber == 0) {
+        console.log('Randomly erroring!');
+        res.status(401).send("UNAUTHORIZED");
+      } else {
+        res.send('AUTHORIZED');
+      }
+    }, sleepTime);
 });
 
 app.use('/api', router);
