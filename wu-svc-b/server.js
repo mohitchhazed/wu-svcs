@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 9001;
 
 function randomIntFromInterval(min,max) {
     return Math.floor(Math.random()*(max-min+1)+min);
